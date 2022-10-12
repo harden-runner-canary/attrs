@@ -1,13 +1,7 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: ["main"]
-  schedule:
-    - cron: "30 22 * * 4"
+  workflow_dispatch
 
 permissions:
   contents: read
@@ -28,9 +22,9 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v1
+        uses: step-security/harden-runner@rc
         with:
-          egress-policy: block
+          egress-policy: audit
           allowed-endpoints: >
             api.github.com:443
             bootstrap.pypa.io:443
