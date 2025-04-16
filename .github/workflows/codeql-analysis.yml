@@ -32,9 +32,12 @@ jobs:
             files.pythonhosted.org:443
             github.com:443
             pypi.org:443
-
+      
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - run:
+          sudo ls
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
