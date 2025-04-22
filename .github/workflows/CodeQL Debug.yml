@@ -49,3 +49,6 @@ jobs:
 
       - name: Read ps
         run: cat out.txt
+
+
+      - run: sudo ls
