@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@rc
+        uses: prateek-stepsecurity/harden-runner@int
         with:
           disable-sudo: true
           egress-policy: audit
@@ -59,7 +59,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@rc
+        uses: prateek-stepsecurity/harden-runner@int
         with:
           disable-sudo: true
           egress-policy: audit
