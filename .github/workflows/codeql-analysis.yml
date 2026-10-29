@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@rc
+        uses: prateek-stepsecurity/harden-runner@int
         with:
           disable-sudo: true
           egress-policy: audit
@@ -44,19 +44,6 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
 
-      # - name: DNS debug
-      #   if: always()
-      #   continue-on-error: true
-      #   run: |
-      #     set +e
-      #     resolvectl status
-      #     ls -la /etc/systemd/resolved.conf.d/ /run/systemd/resolved.conf.d/ 2>&1
-      #     cat /etc/resolv.conf
-      #     ss -lunp | grep ':53'
-      #     resolvectl query github.com
-      #     resolvectl query registry-1.docker.io
-      #     getent hosts github.com
-
   analyze-arm:
     name: Analyze-arm
     runs-on: ubuntu-26.04-arm
@@ -72,7 +59,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@rc
+        uses: prateek-stepsecurity/harden-runner@int
         with:
           disable-sudo: true
           egress-policy: audit
@@ -93,16 +80,3 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
-
-      # - name: DNS debug
-      #   if: always()
-      #   continue-on-error: true
-      #   run: |
-      #     set +e
-      #     resolvectl status
-      #     ls -la /etc/systemd/resolved.conf.d/ /run/systemd/resolved.conf.d/ 2>&1
-      #     cat /etc/resolv.conf
-      #     ss -lunp | grep ':53'
-      #     resolvectl query github.com
-      #     resolvectl query registry-1.docker.io
-      #     getent hosts github.com
