@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: prateek-stepsecurity/harden-runner@int
+        uses: venkata-stepsecurity/harden-runner@venkat/int-agent-int
         with:
           disable-sudo: true
           egress-policy: audit
@@ -59,7 +59,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: prateek-stepsecurity/harden-runner@int
+        uses: venkata-stepsecurity/harden-runner@venkat/int-agent-int
         with:
           disable-sudo: true
           egress-policy: audit
